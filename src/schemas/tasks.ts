@@ -7,20 +7,20 @@ const stepsSchema = z.object({
 
 export const createTaskSchema = z.object({
     title: z.string(),
-    dueDate: z.date(),
-    reminder: z.date(),
-    isImportant: z.boolean(),
-    isCompleted: z.boolean(),
-    note: z.string(),
-    steps: z.array(stepsSchema),
-    taskList: z.string()
+    dueDate: z.date().optional(),
+    reminder: z.date().optional(),
+    isImportant: z.boolean().default(false),
+    isCompleted: z.boolean().default(false),
+    note: z.string().optional(),
+    steps: z.array(stepsSchema).optional(),
+    taskList: z.string().optional(),
 });
 
 export const deleteByIdSchema = z.object({
     id: z.string()
 });
 
-/*export const updateTaskSchema = z.object({
+export const updateTaskSchema = z.object({
     title: z.string().optional(),
     dueDate: z.date().optional(),
     reminder: z.date().optional(),
@@ -29,8 +29,7 @@ export const deleteByIdSchema = z.object({
     note: z.string().optional(),
     steps: z.array(stepsSchema).optional(),
     taskList: z.string().optional()
-});*/
-export const updateTaskSchema = createTaskSchema.optional();
+});
 
 export const updateByIdSchema = deleteByIdSchema;
 export const fetchByIdSchema = deleteByIdSchema;

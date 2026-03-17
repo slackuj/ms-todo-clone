@@ -34,4 +34,12 @@ const taskSchema = new mongoose.Schema<ITask>({
     taskList: String
 });
 
+taskSchema.post( /find/, (error: any, doc: any, next: any) => {
+    if (!doc || error.name === "CastError") {
+        return next(new Error("Task not found"));
+    }
+    if (error) return next(error);
+    next();
+});
+
 export const TaskModel = mongoose.model<ITask>("Task", taskSchema);

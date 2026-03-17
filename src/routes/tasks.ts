@@ -14,6 +14,6 @@ router.post("/", validateRequestBody(createTaskSchema), tasksController.create);
 router.get("/", tasksController.fetchAll);
 router.delete("/:id", validateParams(deleteByIdSchema), tasksController.deleteById);
 router.patch("/:id", validateParams(updateByIdSchema), validateRequestBody(updateTaskSchema), tasksController.updateById);
-router.get("/:id", validateParams(fetchByIdSchema), tasksController.fetchAll);
+router.get("/:id", validateParams(fetchByIdSchema), tasksController.fetchById);
 
 export default router;
