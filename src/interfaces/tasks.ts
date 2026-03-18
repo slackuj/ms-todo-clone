@@ -9,8 +9,8 @@ export interface Task {
     title: string;
     dueDate?: Date;
     reminder?: Date;
-    isImportant: boolean;
-    isCompleted: boolean;
+    isImportant?: boolean;
+    isCompleted?: boolean;
     note?: string;
     steps?: Steps[];
     taskList?: string;
