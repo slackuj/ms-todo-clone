@@ -1,7 +1,7 @@
 export interface Steps {
     id: number;
     title: string;
-    isCompleted: boolean;
+    isCompleted?: boolean;
 }
 
 export interface Task {
