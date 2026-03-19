@@ -26,7 +26,6 @@ const taskSchema = new mongoose.Schema<ITask>({
 
     title: { type: String, required: true },
     dueDate: Date,
-    reminder: Date,
     isImportant: Boolean,
     isCompleted: Boolean,
     note: String,
