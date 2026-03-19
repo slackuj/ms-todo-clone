@@ -8,7 +8,6 @@ const stepsSchema = z.object({
 export const createTaskSchema = z.object({
     title: z.string(),
     dueDate: z.date().optional(),
-    reminder: z.date().optional(),
     isImportant: z.boolean().default(false),
     isCompleted: z.boolean().default(false),
     note: z.string().optional(),
@@ -23,7 +22,6 @@ export const deleteByIdSchema = z.object({
 export const updateTaskSchema = z.object({
     title: z.string().optional(),
     dueDate: z.date().optional(),
-    reminder: z.date().optional(),
     isImportant: z.boolean().optional(),
     isCompleted: z.boolean().optional(),
     note: z.string().optional(),
