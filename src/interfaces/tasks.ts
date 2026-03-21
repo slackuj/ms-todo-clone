@@ -1,5 +1,5 @@
 export interface Step {
-    id: number;
+    id: string;
     title: string;
     isCompleted?: boolean;
 }
