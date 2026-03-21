@@ -7,7 +7,7 @@ const stepsSchema = z.object({
 
 export const createTaskSchema = z.object({
     title: z.string(),
-    dueDate: z.date().optional(),
+    dueDate: z.coerce.date().optional(),
     isImportant: z.boolean().default(false),
     isCompleted: z.boolean().default(false),
     note: z.string().optional(),

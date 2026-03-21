@@ -1,8 +1,8 @@
-import {Task, Steps} from "../interfaces/tasks";
+import {Task, Step} from "../interfaces/tasks";
 import mongoose from "mongoose";
 
 export interface ITask extends Omit<Task, 'id'>, mongoose.Document {}
-export interface ISteps extends Omit<Steps, 'id'>, mongoose.Document {}
+export interface IStep extends Omit<Step, 'id'>, mongoose.Document {}
 
 mongoose.plugin( schema => {
     // sets 'id' = '_id' in response and removes '_id', '__v' from response
@@ -16,7 +16,7 @@ mongoose.plugin( schema => {
     });
 });
 
-const stepsSchema = new mongoose.Schema<ISteps>({
+const stepsSchema = new mongoose.Schema<IStep>({
 
     title: { type: String, required: true },
     isCompleted: Boolean
