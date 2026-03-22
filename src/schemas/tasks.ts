@@ -21,7 +21,7 @@ export const deleteByIdSchema = z.object({
 
 export const updateTaskSchema = z.object({
     title: z.string().optional(),
-    dueDate: z.date().optional(),
+    dueDate: z.coerce.date().optional(),
     isImportant: z.boolean().optional(),
     isCompleted: z.boolean().optional(),
     note: z.string().optional(),
